@@ -1,4 +1,4 @@
-package com.qgh.spring_mvc.util;
+package com.qgh.spring_mvc.common.util;
 
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;

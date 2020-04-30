@@ -1,6 +1,6 @@
-package com.qgh.spring_mvc.controller.bean;
+package com.qgh.spring_mvc.common.controller.bean;
 
-import com.qgh.spring_mvc.util.ExcelAttribute;
+import com.qgh.spring_mvc.common.util.ExcelAttribute;
 import org.apache.ibatis.type.Alias;
 
 /**

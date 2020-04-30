@@ -1,16 +1,14 @@
-package com.qgh.spring_mvc.util;
+package com.qgh.spring_mvc.common.util;
 
-import com.qgh.spring_mvc.controller.bean.User;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import redis.clients.jedis.JedisPool;
 
 /**
  * @author 秦光泓
@@ -19,9 +17,16 @@ import static org.junit.jupiter.api.Assertions.*;
  * @description: TODO
  * @date 2020/4/317:36
  */
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureMockMvc
 class ExcelUtilTest {
+    @Autowired
+    private RedisUtil redisUtil;
+    @Autowired
+    private JedisPool jedisPool;
     private static Logger logger = LoggerFactory.getLogger(ExcelUtilTest.class);
-    @Test
+   /* @Test
     void getExcelToList() {
         // 初始化数据
         List<User> list = new ArrayList<User>();
@@ -42,9 +47,12 @@ class ExcelUtilTest {
         ExcelUtil<User> util = new ExcelUtil<>(User.class);// 创建工具类.
         util.getListToExcel(list, "用户信息", out);// 导出
         logger.info("----执行完毕----------");
-    }
+    }*/
 
-    @Test
+   /* @Test
     void getListToExcel() {
-    }
+        redisUtil.set("123","20200421");
+        System.out.println(redisUtil.get("123"));
+
+    }*/
 }

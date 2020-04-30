@@ -1,14 +1,17 @@
-package com.qgh.spring_mvc.util;
+package com.qgh.spring_mvc.common.util;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.ss.util.CellRangeAddressList;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.util.*;
@@ -183,6 +186,8 @@ public class ExcelUtil<T> implements Serializable {
             List<Field> fields = getMappedFiled(clazz, null);
             //生成工作簿对象
             HSSFWorkbook book = new HSSFWorkbook();
+            //存储最大列宽 key是指具体哪一列, List中放的是每行的这一列的内容的长度
+            Map<Integer,String> map=new HashMap<>();
             //取出一共有多少个sheet
             int listSize = 0;
             if (list != null && list.size() >= 0) {
@@ -192,22 +197,29 @@ public class ExcelUtil<T> implements Serializable {
             for (int index = 0; index <= sheetNo; ++index) {
                 //产生工作表对象
                 HSSFSheet sheet = book.createSheet();
+                //自适应列宽
+                sheet.autoSizeColumn((short)0); //自动调整列宽
+                sheet.autoSizeColumn((short)1);
                 //设置工作表名称
                 book.setSheetName(index, sheetName + index);
                 HSSFRow row;
                 HSSFCell cell;//单元格
-                //生产一行
+                //生产一行 大的标题居中
                 row = sheet.createRow(0);
-                /** ******普通列样式********/
-                HSSFFont font = book.createFont();
-                HSSFCellStyle cellStyle = book.createCellStyle();
-                font.setFontName("Arail narrow");//字体
-                font.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);//字体宽度
-                /** ****标红列样式*** **/
+                HSSFCellStyle cellStyle=  mergeCell(book,0,0,0,fields.size()-1);
+                //创建大标题
+                cell =row.createCell(0);
+               //设置大标题样式
+                cell.setCellStyle(cellStyle);
+               //设置大标题内容
+                cell.setCellValue("个人信息登记表");
+                /** ****标红列样式 被标记了的字段使用*** **/
                 HSSFFont newFont = book.createFont();
                 HSSFCellStyle newCellStyle = book.createCellStyle();
                 newFont.setFontName("Arail narrow");//字体
                 newFont.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
+                //第二行是标题字段
+                row = sheet.createRow(1);
                 //创建列名称
                 for (int i = 0; i < fields.size(); ++i) {
                     Field field = fields.get(i);
@@ -228,7 +240,9 @@ public class ExcelUtil<T> implements Serializable {
                         cell.setCellStyle(createHeadStyle(book));
                     }
                     //设置列的宽度
-                    sheet.setColumnWidth(i, (int) ((attr.name().getBytes().length <= 4 ? 6 : attr.name().getBytes().length) * 1.5 * 256));
+                   // sheet.setColumnWidth(i, (int) ((attr.name().getBytes().length <= 4 ? 6 : attr.name().getBytes().length) * 1.5 * 256));
+                   //把标题放进去
+                    map.put(i,attr.name());
                     //设置列中写入的类型为string类型
                     cell.setCellType(HSSFCell.CELL_TYPE_STRING);
                     //写入列名
@@ -243,13 +257,13 @@ public class ExcelUtil<T> implements Serializable {
                     }
                 }
                 /* ****创建内容列****** */
-                font = book.createFont();
-                cellStyle = book.createCellStyle();
                 int startNo = index * sheetSize;
                 int endNo = Math.min(startNo + sheetSize, listSize);
                 //写入各条记录，每条记录对应excel表中的一行
                 for (int i = startNo; i < endNo; ++i) {
-                    row = sheet.createRow(i + 1 - startNo);
+                    row = sheet.createRow(i + 2 - startNo);
+                    // 记录这一行的每列的长度
+                    List<Object> valueList = new ArrayList<Object>();
                     //取出集合中的第一条记录
                     T vo = list.get(i);
                     for (int j = 0; j < fields.size(); ++j) {
@@ -272,9 +286,7 @@ public class ExcelUtil<T> implements Serializable {
                                 newCellStyle.setFont(newFont);
                                 cell.setCellStyle(newCellStyle);
                             } else {
-                                font.setColor(HSSFFont.COLOR_NORMAL);
-                                cellStyle.setFont(newFont);
-                                cell.setCellStyle(cellStyle);
+                                cell.setCellStyle(createContentStyle(book));
                             }
                             //如果数据存在就填入 不存在就填入空格
                             Class<?> classType = field.getType();
@@ -283,10 +295,24 @@ public class ExcelUtil<T> implements Serializable {
                                 value = CommUtil.getNowDateLongStr(String.valueOf(field.get(vo)));
                             }
                             //设置value
-                            cell.setCellValue(field.get(vo) == null ? ""
-                                    : String.valueOf(field.get(vo)));// 如果数据存在就填入,不存在填入空格.
+                            value= field.get(vo) == null ? "" : String.valueOf(field.get(vo));
+                            cell.setCellValue(value);// 如果数据存在就填入,不存在填入空格.
+                            //存取当前行的所有列
+                          //  valueList.add(value);
+
+                           // sheet.setColumnWidth((short)j,value.toString().length() * 512);
+                            //map放入第一行中的所有列值 key代表列  ,value当前列的最小值
+                            //比较当前列的长度
+                            if (value.getBytes().length>map.get(j).getBytes().length){
+                                map.put(j,value);
+                            }
                         }
+
                     }
+                }
+                //设置每一列的大小
+                for(int i=0;i<fields.size();++i){
+                    sheet.setColumnWidth(i,(int)((map.get(i).getBytes().length*256*1.5)));
                 }
                 /* *************创建合计列*************** */
                 HSSFRow lastRow = sheet.createRow(sheet.getLastRowNum() + 1);
@@ -417,7 +443,6 @@ public class ExcelUtil<T> implements Serializable {
 
     /**
      * 垂直水平居中风格
-     *
      * @param wb
      * @return
      */
@@ -435,19 +460,154 @@ public class ExcelUtil<T> implements Serializable {
     }
 
     /**
-     * 创建浅蓝绿色背景风格
-     *
+     * 創建标题样式
      * @param wb
      */
-    private static CellStyle createHeadStyle(final Workbook wb) {
-        CellStyle style = createVHCenterStyle(wb);
+    private static CellStyle createHeadStyle(final HSSFWorkbook wb) {
+        CellStyle style = wb.createCellStyle();
+        //设置自动换行
+      //  style.setWrapText(true);
+        //设置字体
         final Font font = wb.createFont();
         font.setFontName("宋体");
         font.setFontHeight((short) 300);
         font.setBold(true);
         style.setFont(font);
-        style.setFillForegroundColor(IndexedColors.AQUA.getIndex());
+        //设置背景颜色
+        style.setFillForegroundColor(IndexedColors.LIGHT_GREEN.getIndex());
         style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        //设置对齐方式
+        setCellAlign(style,12);
         return style;
+    }
+
+    /**
+     * 創建内容样式
+     * @param wb
+     */
+    private static CellStyle createContentStyle(final HSSFWorkbook wb) {
+        CellStyle style = wb.createCellStyle();
+        //设置自动换行
+       // style.setWrapText(true);
+        //设置字体
+        final Font font = wb.createFont();
+        font.setFontName("宋体");
+        font.setFontHeightInPoints((short)12);
+        style.setFont(font);
+        //设置对齐方式
+        setCellAlign(style,1);
+        return style;
+    }
+
+    /***
+     * 设置单元格的对齐方式
+     * @param style
+     * @return void
+     * @date 2020/4/7  9:26
+     */
+
+    private static void setCellAlign(CellStyle style, int num) {
+        switch (num) {
+            case 0:
+                //此单元格格式暂不动，默认进行对照
+                num++;
+                break;
+            case 1:
+                style.setAlignment(HSSFCellStyle.ALIGN_LEFT);//靠左
+                num++;
+                break;
+            case 2:
+                style.setAlignment(HSSFCellStyle.ALIGN_RIGHT);//靠右
+                num++;
+                break;
+            case 3:
+                style.setAlignment(HSSFCellStyle.ALIGN_CENTER);//水平居中
+                num++;
+                break;
+            case 4:
+                style.setVerticalAlignment(HSSFCellStyle.VERTICAL_TOP);//垂直靠上
+                num++;
+                break;
+            case 5:
+                style.setVerticalAlignment(HSSFCellStyle.VERTICAL_BOTTOM);//垂直靠下
+                num++;
+                break;
+            case 6:
+                style.setVerticalAlignment(HSSFCellStyle.VERTICAL_CENTER);//垂直居中
+                num++;
+                break;
+            case 7:
+                style.setVerticalAlignment(HSSFCellStyle.VERTICAL_JUSTIFY);//垂直平铺
+                num++;
+                break;
+            case 8:
+                style.setAlignment(HSSFCellStyle.ALIGN_CENTER_SELECTION);//跨列居中
+                num++;
+                break;
+            case 9:
+                style.setAlignment(HSSFCellStyle.ALIGN_FILL);//填充
+                num++;
+                break;
+            case 10:
+                style.setAlignment(HSSFCellStyle.ALIGN_GENERAL);//普通默认
+                num++;
+                break;
+            case 11:
+                style.setAlignment(HSSFCellStyle.ALIGN_JUSTIFY);//两端对齐
+                num++;
+                break;
+            case 12:
+                style.setVerticalAlignment(VerticalAlignment.CENTER);// 垂直
+                style.setAlignment(HorizontalAlignment.CENTER);// 水平
+                num++;
+                break;
+        }
+    }
+
+    /**
+     * 对文件流输出下载的中文文件名进行编码 屏蔽各种浏览器版本的差异性
+     */
+    public static String encodeChineseDownloadFileName(HttpServletRequest request, String pFileName) throws UnsupportedEncodingException {
+        String filename = null;
+        String agent = request.getHeader("USER-AGENT");
+        if (null != agent&&pFileName!=null){
+            if (-1 != agent.indexOf("Firefox")) {//Firefox
+                filename = "=?UTF-8?B?" + (new String(org.apache.commons.codec.binary.Base64.encodeBase64(pFileName.getBytes("UTF-8"))))+ "?=";
+            } else {//IE7+ & Chrome
+                filename = java.net.URLEncoder.encode(pFileName, "UTF-8");
+                filename = org.apache.commons.lang.StringUtils.replace(filename, "+", "%20");//替换空格
+            }
+        } else {
+            filename = pFileName;
+        }
+        return filename;
+    }
+   /***
+   * 合并单元格
+    * @param wb
+    * @param firstRow 起始行
+    * @param lastRow  结束行
+    * @param firstCell 起始列
+    * @param fields 结束列
+   * @return org.apache.poi.hssf.usermodel.HSSFCellStyle
+   * @date 2020/4/7  17:59
+   */
+
+    public static HSSFCellStyle mergeCell(HSSFWorkbook wb,int firstRow,int lastRow,int firstCell,int fields){
+        CellRangeAddress cellRange1 = new CellRangeAddress(firstRow, lastRow, (short) firstCell, (short) fields);
+        wb.getSheetAt(0).addMergedRegion(cellRange1);
+        //设置合并后的样式
+        HSSFCellStyle cellStyle=   wb.createCellStyle();
+        //垂直居中
+        //设置对齐方式
+        setCellAlign(cellStyle,12);
+         //设置一个边框
+       // cellStyle.setBorderTop(HSSFBorderFormatting.BORDER_THICK);
+        //设置字体
+        final Font font = wb.createFont();
+        font.setFontName("等线");
+        font.setFontHeightInPoints((short)11);
+        cellStyle.setFont(font);
+        return cellStyle;
     }
 }

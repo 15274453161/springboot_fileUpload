@@ -3,32 +3,67 @@
   <component name="ChangeListManager">
     <list default="true" id="7ef48d56-cda5-4996-8046-d73bcf62ca70" name="Default Changelist" comment="第一次提交文件上传">
       <change afterPath="$PROJECT_DIR$/spring_mvc_8.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/controller/bean/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/util/CommUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/util/ExcelAttribute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/util/ExcelUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/util/ExcelUtilTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/config/FilterConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/controller/BaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/controller/FileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/filter/UnitaryAuthorityBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/filter/UnitaryAuthorityFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/BankUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/HttpUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/Interface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/Md5Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/MoneyUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/RedisUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/StrUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/UID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/sftp/SFTPUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/sftp/bean/FtpRetBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/sftp/bean/SftpBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/vo/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/test/Test1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/common/test/TestFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/common/test/TestHttpClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/controller/FileController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/controller/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/controller/bean/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/util/CommUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/CommUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/util/ConfigUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/ConfigUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/util/ExcelAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/ExcelAttribute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/util/ExcelUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/ExcelUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/FileUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/SpringMvcApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/SpringMvcApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/util/ExcelUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/common/util/ExcelUtilTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qgh/spring_mvc/controller/FileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qgh/spring_mvc/util/FileUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/qgh/spring_mvc/SpringMvcApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/qgh/spring_mvc/SpringMvcApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="165" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -36,6 +71,11 @@
         <option name="mavenHome" value="D:/tools1/windows/maven/apache-maven-3.5.3" />
         <option name="userSettingsFile" value="D:\tools1\windows\maven\apache-maven-3.5.3\conf\settings.xml" />
       </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="1ZHU90bjl3mDhKpxnTbyT2lBwTj" />
@@ -56,41 +96,97 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/sftp/bean" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.qgh.spring_mvc.util" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.qgh.spring_mvc" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.qgh.spring_mvc.common" />
+      <recent name="com.qgh.spring_mvc" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ideaworkspace\maven\springboot\spring_mvc_8\src\main\java\com\qgh\spring_mvc\common\util\sftp\bean" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.qgh.spring_mvc.common.util" />
+      <recent name="com.qgh.spring_mvc.common.controller" />
+      <recent name="com.qgh.spring_mvc.vo" />
       <recent name="com.qgh.spring_mvc.util" />
-      <recent name="com.qgh.spring_mvc.controller.bean" />
+      <recent name="com.qgh.spring_mvc.config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ideaworkspace\maven\springboot\spring_mvc_8\src\main\resources\static" />
       <recent name="D:\ideaworkspace\maven\springboot\spring_mvc_8\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ExcelUtilTest.getExcelToList">
-    <configuration name="ExcelUtilTest.getExcelToList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.StrUtil">
+    <configuration name="BankUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.qgh.spring_mvc.common.util.BankUtils" />
       <module name="spring_mvc_8" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.qgh.spring_mvc.util.*" />
+          <option name="PATTERN" value="com.qgh.spring_mvc.common.util.sftp.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.qgh.spring_mvc.util" />
-      <option name="MAIN_CLASS_NAME" value="com.qgh.spring_mvc.util.ExcelUtilTest" />
-      <option name="METHOD_NAME" value="getExcelToList" />
-      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.qgh.spring_mvc.common.util.FileUtil" />
+      <module name="spring_mvc_8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qgh.spring_mvc.common.util.sftp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Md5Util" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.qgh.spring_mvc.common.util.Md5Util" />
+      <module name="spring_mvc_8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qgh.spring_mvc.common.util.sftp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MoneyUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.qgh.spring_mvc.common.util.MoneyUtil" />
+      <module name="spring_mvc_8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qgh.spring_mvc.common.util.sftp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StrUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.qgh.spring_mvc.common.util.StrUtil" />
+      <module name="spring_mvc_8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qgh.spring_mvc.common.util.sftp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -104,7 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ExcelUtilTest.getExcelToList" />
+        <item itemvalue="Application.StrUtil" />
+        <item itemvalue="Application.Md5Util" />
+        <item itemvalue="Application.FileUtil" />
+        <item itemvalue="Application.MoneyUtil" />
+        <item itemvalue="Application.BankUtils" />
       </list>
     </recent_temporary>
   </component>
@@ -133,7 +233,18 @@
       <workItem from="1584495361811" duration="6889000" />
       <workItem from="1585289314819" duration="10000" />
       <workItem from="1585552954217" duration="1188000" />
-      <workItem from="1585882203662" duration="18999000" />
+      <workItem from="1585882203662" duration="19145000" />
+      <workItem from="1586221991418" duration="15462000" />
+      <workItem from="1586310275855" duration="1432000" />
+      <workItem from="1586325395518" duration="1197000" />
+      <workItem from="1586742759430" duration="2298000" />
+      <workItem from="1587433489525" duration="312000" />
+      <workItem from="1587437136961" duration="10388000" />
+      <workItem from="1587523038199" duration="2037000" />
+      <workItem from="1587713076645" duration="9182000" />
+      <workItem from="1587974373972" duration="6441000" />
+      <workItem from="1588043731835" duration="6682000" />
+      <workItem from="1588209026987" duration="10875000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交文件上传">
       <created>1585553438835</created>
@@ -142,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585553438835</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="表格工具包">
+      <created>1585910028803</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585910028803</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,81 +270,90 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="第一次提交文件上传" />
-    <option name="LAST_COMMIT_MESSAGE" value="第一次提交文件上传" />
+    <MESSAGE value="表格工具包" />
+    <option name="LAST_COMMIT_MESSAGE" value="表格工具包" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="203" y="286" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1584495792935">
+    <state x="477" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1587713253446">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state x="203" y="286" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/62.0.1218.720@62.0.1218.720" timestamp="1584495792935" />
-    <state x="456" y="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1584495794781">
+    <state x="477" y="70" key="#com.intellij.ide.util.MemberChooser/62.0.1218.720@62.0.1218.720" timestamp="1587713253446" />
+    <state x="203" y="286" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1587714212479">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state x="456" y="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/62.0.1218.720@62.0.1218.720" timestamp="1584495794781" />
-    <state x="176" y="0" key="CommitChangelistDialog2" timestamp="1585553508816">
+    <state x="203" y="286" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/62.0.1218.720@62.0.1218.720" timestamp="1587714212479" />
+    <state x="456" y="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1587714213730">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state x="176" y="0" key="CommitChangelistDialog2/62.0.1218.720@62.0.1218.720" timestamp="1585553508816" />
+    <state x="456" y="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/62.0.1218.720@62.0.1218.720" timestamp="1587714213730" />
+    <state x="176" y="0" key="CommitChangelistDialog2" timestamp="1585910027705">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state x="176" y="0" key="CommitChangelistDialog2/62.0.1218.720@62.0.1218.720" timestamp="1585910027705" />
     <state x="452" y="116" key="FileChooserDialogImpl" timestamp="1585553135269">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
     <state x="452" y="116" key="FileChooserDialogImpl/62.0.1218.720@62.0.1218.720" timestamp="1585553135269" />
-    <state width="1072" height="189" key="GridCell.Tab.0.bottom" timestamp="1585909929847">
+    <state width="1175" height="80" key="GridCell.Tab.0.bottom" timestamp="1588217041221">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1072" height="189" key="GridCell.Tab.0.bottom/62.0.1218.720@62.0.1218.720" timestamp="1585909929847" />
-    <state width="1072" height="189" key="GridCell.Tab.0.center" timestamp="1585909929847">
+    <state width="1175" height="80" key="GridCell.Tab.0.bottom/62.0.1218.720@62.0.1218.720" timestamp="1588217041221" />
+    <state width="1175" height="80" key="GridCell.Tab.0.center" timestamp="1588217041220">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1072" height="189" key="GridCell.Tab.0.center/62.0.1218.720@62.0.1218.720" timestamp="1585909929847" />
-    <state width="1072" height="189" key="GridCell.Tab.0.left" timestamp="1585909929847">
+    <state width="1175" height="80" key="GridCell.Tab.0.center/62.0.1218.720@62.0.1218.720" timestamp="1588217041220" />
+    <state width="1175" height="80" key="GridCell.Tab.0.left" timestamp="1588217041220">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1072" height="189" key="GridCell.Tab.0.left/62.0.1218.720@62.0.1218.720" timestamp="1585909929847" />
-    <state width="1072" height="189" key="GridCell.Tab.0.right" timestamp="1585909929847">
+    <state width="1175" height="80" key="GridCell.Tab.0.left/62.0.1218.720@62.0.1218.720" timestamp="1588217041220" />
+    <state width="1175" height="80" key="GridCell.Tab.0.right" timestamp="1588217041221">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1072" height="189" key="GridCell.Tab.0.right/62.0.1218.720@62.0.1218.720" timestamp="1585909929847" />
-    <state width="1072" height="216" key="GridCell.Tab.1.bottom" timestamp="1585909608731">
+    <state width="1175" height="80" key="GridCell.Tab.0.right/62.0.1218.720@62.0.1218.720" timestamp="1588217041221" />
+    <state width="1175" height="208" key="GridCell.Tab.1.bottom" timestamp="1588217038968">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1072" height="216" key="GridCell.Tab.1.bottom/62.0.1218.720@62.0.1218.720" timestamp="1585909608731" />
-    <state width="1072" height="216" key="GridCell.Tab.1.center" timestamp="1585909608731">
+    <state width="1175" height="208" key="GridCell.Tab.1.bottom/62.0.1218.720@62.0.1218.720" timestamp="1588217038968" />
+    <state width="1175" height="208" key="GridCell.Tab.1.center" timestamp="1588217038967">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1072" height="216" key="GridCell.Tab.1.center/62.0.1218.720@62.0.1218.720" timestamp="1585909608731" />
-    <state width="1072" height="216" key="GridCell.Tab.1.left" timestamp="1585909608731">
+    <state width="1175" height="208" key="GridCell.Tab.1.center/62.0.1218.720@62.0.1218.720" timestamp="1588217038967" />
+    <state width="1175" height="208" key="GridCell.Tab.1.left" timestamp="1588217038967">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1072" height="216" key="GridCell.Tab.1.left/62.0.1218.720@62.0.1218.720" timestamp="1585909608731" />
-    <state width="1072" height="216" key="GridCell.Tab.1.right" timestamp="1585909608731">
+    <state width="1175" height="208" key="GridCell.Tab.1.left/62.0.1218.720@62.0.1218.720" timestamp="1588217038967" />
+    <state width="1175" height="208" key="GridCell.Tab.1.right" timestamp="1588217038967">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1072" height="216" key="GridCell.Tab.1.right/62.0.1218.720@62.0.1218.720" timestamp="1585909608731" />
-    <state width="1175" height="126" key="GridCell.Tab.2.bottom" timestamp="1584524758765">
+    <state width="1175" height="208" key="GridCell.Tab.1.right/62.0.1218.720@62.0.1218.720" timestamp="1588217038967" />
+    <state width="1175" height="150" key="GridCell.Tab.2.bottom" timestamp="1587721801940">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1175" height="126" key="GridCell.Tab.2.bottom/62.0.1218.720@62.0.1218.720" timestamp="1584524758765" />
-    <state width="1175" height="126" key="GridCell.Tab.2.center" timestamp="1584524758765">
+    <state width="1175" height="150" key="GridCell.Tab.2.bottom/62.0.1218.720@62.0.1218.720" timestamp="1587721801940" />
+    <state width="1175" height="150" key="GridCell.Tab.2.center" timestamp="1587721801940">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1175" height="126" key="GridCell.Tab.2.center/62.0.1218.720@62.0.1218.720" timestamp="1584524758765" />
-    <state width="1175" height="126" key="GridCell.Tab.2.left" timestamp="1584524758765">
+    <state width="1175" height="150" key="GridCell.Tab.2.center/62.0.1218.720@62.0.1218.720" timestamp="1587721801940" />
+    <state width="1175" height="150" key="GridCell.Tab.2.left" timestamp="1587721801940">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1175" height="126" key="GridCell.Tab.2.left/62.0.1218.720@62.0.1218.720" timestamp="1584524758765" />
-    <state width="1175" height="126" key="GridCell.Tab.2.right" timestamp="1584524758765">
+    <state width="1175" height="150" key="GridCell.Tab.2.left/62.0.1218.720@62.0.1218.720" timestamp="1587721801940" />
+    <state width="1175" height="150" key="GridCell.Tab.2.right" timestamp="1587721801940">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1175" height="126" key="GridCell.Tab.2.right/62.0.1218.720@62.0.1218.720" timestamp="1584524758765" />
+    <state width="1175" height="150" key="GridCell.Tab.2.right/62.0.1218.720@62.0.1218.720" timestamp="1587721801940" />
     <state x="173" y="3" key="SettingsEditor" timestamp="1585553335565">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
     <state x="173" y="3" key="SettingsEditor/62.0.1218.720@62.0.1218.720" timestamp="1585553335565" />
-    <state x="264" y="94" key="Vcs.Push.Dialog.v2" timestamp="1585553543284">
+    <state x="264" y="94" key="Vcs.Push.Dialog.v2" timestamp="1585910043817">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state x="264" y="94" key="Vcs.Push.Dialog.v2/62.0.1218.720@62.0.1218.720" timestamp="1585553543284" />
+    <state x="264" y="94" key="Vcs.Push.Dialog.v2/62.0.1218.720@62.0.1218.720" timestamp="1585910043817" />
+    <state x="468" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588240815443">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state x="468" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/62.0.1218.720@62.0.1218.720" timestamp="1588240815443" />
     <state x="494" y="82" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1585906584576">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
@@ -235,10 +362,10 @@
       <screen x="62" y="0" width="1218" height="720" />
     </state>
     <state x="328" y="161" key="run.anything.popup/62.0.1218.720@62.0.1218.720" timestamp="1584502763181" />
-    <state x="335" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1585894399084">
+    <state x="335" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1587449313202">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state x="335" y="41" width="672" height="678" key="search.everywhere.popup/62.0.1218.720@62.0.1218.720" timestamp="1585894399084" />
+    <state x="335" y="41" width="672" height="678" key="search.everywhere.popup/62.0.1218.720@62.0.1218.720" timestamp="1587449313202" />
     <state x="481" y="265" key="svn.upgradeDialog" timestamp="1584523833371">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
@@ -252,51 +379,86 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/controller/FileController.java</url>
-          <line>21</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/controller/FileController.java</url>
+          <line>25</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/controller/FileController.java</url>
-          <line>22</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/controller/FileController.java</url>
+          <line>26</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/util/ExcelUtil.java</url>
-          <line>111</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/ExcelUtil.java</url>
+          <line>114</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/util/ExcelUtil.java</url>
-          <line>130</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/ExcelUtil.java</url>
+          <line>133</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/util/ExcelUtil.java</url>
-          <line>190</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/RedisUtil.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/util/ExcelUtil.java</url>
-          <line>214</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/common/test/TestHttpClient.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/util/ExcelUtil.java</url>
-          <line>248</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/common/test/TestHttpClient.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/util/ExcelUtil.java</url>
-          <line>182</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/BankUtils.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/util/ExcelUtil.java</url>
-          <line>403</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/MoneyUtil.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/StrUtil.java</url>
+          <line>793</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/FileUtil.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/Md5Util.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/Md5Util.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/Md5Util.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/Md5Util.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/spring_mvc_8$FileUtil.ic" NAME="FileUtil Coverage Results" MODIFIED="1588052697655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.qgh.spring_mvc.common.util.*</FILTER>
+    </SUITE>
   </component>
 </project>

@@ -1,6 +1,5 @@
-package com.qgh.spring_mvc.util;
+package com.qgh.spring_mvc.common.util;
 
-import javax.annotation.Resource;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
