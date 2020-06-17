@@ -9,6 +9,9 @@ import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author 秦光泓
  * @title:
@@ -20,7 +23,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class TestFilter {
 
-    //声明
+    /*//声明
     private MockHttpServletRequest request;
     private MockHttpServletResponse response;
 
@@ -33,6 +36,10 @@ public class TestFilter {
 
     @Test
     public void testFilter(){
-
+        Map map=new HashMap();
+        map.put(1,1);
+        map.put(1,2);
+        map.put(2,3);
     }
+*/
 }

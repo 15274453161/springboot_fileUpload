@@ -35,7 +35,7 @@ import java.util.*;
  */
 
 public class TestHttpClient {
-    // 创建CookieStore实例
+    /*// 创建CookieStore实例
     static CookieStore cookieStore = null;
     static HttpClientContext context = null;
     String loginUrl = "http://127.0.0.1:8080/test/qgh";
@@ -64,10 +64,10 @@ public class TestHttpClient {
         try {
             // 执行post请求
             HttpResponse httpResponse = client.execute(httpPost);
-          /*  String location = httpResponse.getFirstHeader("Location").getValue();
+          *//*  String location = httpResponse.getFirstHeader("Location").getValue();
             if (location != null && location.startsWith(loginErrorUrl)) {
                 System.out.println("----loginError");
-            }*/
+            }*//*
             printResponse(httpResponse);
 
             // 执行get请求
@@ -180,11 +180,11 @@ public class TestHttpClient {
         System.out.println("----setCookieStore");
         cookieStore = new BasicCookieStore();
         // JSESSIONID
-       /* String setCookie = httpResponse.getFirstHeader("Set-Cookie")
+       *//* String setCookie = httpResponse.getFirstHeader("Set-Cookie")
                 .getValue();
         String JSESSIONID = setCookie.substring("JSESSIONID=".length(),
                 setCookie.indexOf(";"));
-        System.out.println("JSESSIONID:" + JSESSIONID);*/
+        System.out.println("JSESSIONID:" + JSESSIONID);*//*
         // 新建一个Cookie
         BasicClientCookie cookie = new BasicClientCookie("JSESSIONID",
                 "1234");
@@ -207,5 +207,5 @@ public class TestHttpClient {
                     (String) parmEntry.getValue()));
         }
         return param;
-    }
+    }*/
 }

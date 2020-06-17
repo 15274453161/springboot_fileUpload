@@ -18,6 +18,8 @@ import org.apache.http.impl.cookie.BasicClientCookie;
  */
 
 public class Test1 {
-
+    public static void main(String[] args) {
+        new Thread(new InterImpl()).start();
+    }
 
 }
