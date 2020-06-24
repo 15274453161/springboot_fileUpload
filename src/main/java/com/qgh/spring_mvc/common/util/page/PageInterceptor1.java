@@ -19,13 +19,14 @@ import org.apache.ibatis.scripting.defaults.DefaultParameterHandler;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-
 import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -45,8 +46,8 @@ import java.util.Properties;
                 args = {Connection.class,Integer.class}
         )
 })
-//@Component //暂时注销
-public class PageInterceptor implements Interceptor {
+@Component
+public class PageInterceptor1 implements Interceptor {
     @Value("${mybatis.page-type.databaseType}")
     private String databaseType;//数据库类型，不同的数据库有不同的分页方法
 
@@ -74,12 +75,17 @@ public class PageInterceptor implements Interceptor {
         //RoutingStatementHandler实现的所有StatementHandler接口方法里面都是调用的delegate对应的方法。
         BoundSql boundSql = delegate.getBoundSql();
 
-        //拿到当前绑定Sql的参数对象，就是我们在调用对应的Mapper映射语句时所传入的参数对象
+        /**拿到当前绑定Sql的参数对象，就是我们在调用对应的Mapper映射语句时所传入的参数对象
+         *   List<OrgBean> orgBeans = orgService.query(orgBean); orgBean这个对象
+         */
         Object obj = boundSql.getParameterObject();
 
         //这里我们简单的通过传入的是Page对象就认定它是需要进行分页操作的。
-        if (obj instanceof Page<?>) {
-            Page<?> page = (Page<?>) obj;
+        Page<Object> page = null;
+        if (obj != null) {
+            page = convertPage(obj, page);
+        }
+        if (page != null && page.getPageNo() > 0 && page.getPageSize() > 0) {
 
             /**通过反射获取delegate父类BaseStatementHandler的mappedStatement属性
              * file [D:\ideaworkspace\maven\springboot\spring_mvc_8\target\classes\mapper\OrgMapper.xml] 该方法所属的mapper
@@ -343,6 +349,21 @@ public class PageInterceptor implements Interceptor {
                     e.printStackTrace();
                 }
             }
+        }
+    }
+   /***
+   *将传入的查询的bean转换从Page对象
+   */
+
+    protected static Page<Object> convertPage(Object parameterObject, Page<Object> page) {
+        try {
+            if (parameterObject instanceof Page) {
+                return (Page)parameterObject;
+            } else {
+                return parameterObject instanceof Map ? (Page)((HashMap)parameterObject).get("page") : (Page)ReflectUtil.getFieldValue(parameterObject, "page");
+            }
+        } catch (Exception var3) {
+            return null;
         }
     }
 }

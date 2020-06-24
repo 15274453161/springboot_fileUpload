@@ -2,9 +2,8 @@ package com.qgh.spring_mvc.moduels.controller;
 
 import com.qgh.spring_mvc.common.controller.BaseController;
 import com.qgh.spring_mvc.common.vo.Result;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import com.qgh.spring_mvc.moduels.bean.Employee;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author 秦光泓
@@ -20,4 +19,5 @@ public class TestController  extends BaseController {
     public Result test1(){
         return new Result(BaseController.RESULT_MESSAGE_ERROR,BaseController.TEMPLATE_ERROR_MESSAGE,null);
     }
+
 }

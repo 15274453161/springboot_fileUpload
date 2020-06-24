@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoCo
 @SpringBootApplication(exclude={
         RedisAutoConfiguration.class,
         RedisRepositoriesAutoConfiguration.class})
-@MapperScan("com.qgh.spring_mvc.moduels.dao")
+@MapperScan("com.qgh.spring_mvc.moduels.dao")//自动扫描接口映射器
 public class SpringMvcApplication {
 
     public static void main(String[] args) {

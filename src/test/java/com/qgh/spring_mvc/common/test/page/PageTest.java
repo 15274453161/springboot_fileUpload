@@ -27,23 +27,33 @@ public class PageTest {
     private OrgService orgService;
     private static Logger logger= LoggerFactory.getLogger(PageTest.class);
 
-    @Test
+   /* @Test
     public void testPage() {
-        /**默认首页1 显示15条记录*/
+        *//**默认首页1 显示15条记录*//*
         Page<OrgBean> page = new Page();
         OrgBean orgBean = new OrgBean();
         orgBean.setPage(page);
         List<OrgBean> orgBeans = orgService.queryPage(page);
         //logger.warn("分页结果",orgBeans);
         System.out.println(orgBeans);
-    }
+    }*/
 
-   /* @Test
-    public void testPage0() {
-        *//**默认首页1 显示15条记录*//*
+    @Test
+    public void test() {
+        /**默认首页1 显示15条记录*/
 
         OrgBean orgBean = new OrgBean();
         List<OrgBean> orgBeans = orgService.query(orgBean);
         System.out.println(orgBeans);
-    }*/
+    }
+
+    @Test
+    public void testPage0() {
+
+        Page<OrgBean> page=new Page<>();
+        OrgBean orgBean = new OrgBean();
+        orgBean.setPage(page);
+        List<OrgBean> orgBeans = orgService.query(orgBean);
+        System.out.println(orgBeans);
+    }
 }

@@ -1,62 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ef48d56-cda5-4996-8046-d73bcf62ca70" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/PhoneUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/SpringTool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/TextUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/ThreadPoolUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/page/MyInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/page/MybatisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/page/Page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/page/PageInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/thread/AbstractConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/thread/AbstractProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/thread/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/thread/Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/thread/PCModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/thread/Producer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/bean/BaseBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/bean/OrgBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/controller/PageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/dao/BaseDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/dao/OrgDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/java8/MyFunctionalInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/java8/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/java8/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/service/OrgService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/service/impl/OrgServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/test/AbstacrPro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/test/DesDecrypt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/test/Inter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/test/InterImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/test/InterImpl1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/test/RSAUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/thread/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/thread/MyThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/thread/lock/MyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/thread/lock/MyThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/thread/lock/MyThreadA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/thread/lock/MyThreadB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/thread/lock/Run.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/thread/pipe/ReadData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/thread/pipe/ThreadRead.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/thread/pipe/ThreadWrite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/thread/pipe/WriteData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrgMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/common/test/page/PageTest.java" afterDir="false" />
+    <list default="true" id="7ef48d56-cda5-4996-8046-d73bcf62ca70" name="Default Changelist" comment="util工具类新增">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/SqlSessionFactoryUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/page/PageInterceptor1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/bean/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/bean/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/bean/EmployeeTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/bean/FemaleEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/bean/FemaleHealthForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/bean/HealthForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/bean/MaleEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/bean/MaleHealthForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/bean/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/bean/WorkCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/controller/MappingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/dao/BookDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/dao/EmployeeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/dao/EmployeeTaskDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/dao/FemaleHealthFormDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/dao/MaleHealthFormDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/dao/TaskDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/dao/WorkCardDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/enums/BookType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/enums/SexEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/handler/SexEnumTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/jdbc/JdbcExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/proxy/cglib/CglibDynamicProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/proxy/cglib/TestDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/proxy/jdk/JDKDynamicProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/proxy/jdk/TestDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/proxy/jdk/TestDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/proxy/jdk/TestMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/BookMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/EmployeeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/EmployeeTaskMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/FemaleHealthFormMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/MaleHealthFormMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TaskMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/WorkCardMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/common/test/EnumTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/common/test/MappingTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring_mvc_8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_8.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/SpringMvcApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/SpringMvcApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/test/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/test/Test1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/page/PageInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/page/PageInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/vo/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/vo/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/controller/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/common/test/TestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/common/test/TestFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/common/test/TestHttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/common/test/TestHttpClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/common/test/page/PageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qgh/spring_mvc/common/test/page/PageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/qgh/spring_mvc/SpringMvcApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qgh/spring_mvc/SpringMvcApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/file.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/qgh/spring_mvc/SpringMvcApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/qgh/spring_mvc/SpringMvcApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +65,8 @@
       <list>
         <option value="HTML File" />
         <option value="JUnit5 Test Class" />
+        <option value="Kotlin Class" />
+        <option value="mapper" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -96,14 +92,13 @@
   <component name="ProjectId" id="1ZHU90bjl3mDhKpxnTbyT2lBwTj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="MyBatisLogPluginindexNum" value="11" />
+    <property name="MyBatisLogPluginindexNum" value="29" />
     <property name="MyBatisLogPluginparameters" value="Parameters:" />
     <property name="MyBatisLogPluginpreparing" value="Preparing:" />
     <property name="MyBatisLogPluginrunning" value="true" />
@@ -139,24 +134,24 @@
       <recent name="D:\ideaworkspace\maven\springboot\spring_mvc_8\src\main\java\com\qgh\spring_mvc\common\util\sftp\bean" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.qgh.spring_mvc.common.util.page" />
       <recent name="com.qgh.spring_mvc.moduels.dao" />
       <recent name="com.qgh.spring_mvc.moduels.bean" />
       <recent name="com.qgh.spring_mvc.moduels.test" />
       <recent name="com.qgh.spring_mvc.common.util.thread" />
-      <recent name="com.qgh.spring_mvc.common.util" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ideaworkspace\maven\springboot\spring_mvc_8\src\main\resources\static" />
       <recent name="D:\ideaworkspace\maven\springboot\spring_mvc_8\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PageTest.testPage">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.qgh.spring_mvc.moduels.thread.Main" />
+  <component name="RunManager" selected="Application.TestMain">
+    <configuration name="TestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.qgh.spring_mvc.moduels.proxy.jdk.TestMain" />
       <module name="spring_mvc_8" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.qgh.spring_mvc.moduels.thread.pipe.*" />
+          <option name="PATTERN" value="com.qgh.spring_mvc.moduels.proxy.jdk.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -164,33 +159,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Run" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.qgh.spring_mvc.moduels.thread.lock.Run" />
+    <configuration name="EnumTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring_mvc_8" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.qgh.spring_mvc.moduels.thread.lock.*" />
+          <option name="PATTERN" value="com.qgh.spring_mvc.common.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.qgh.spring_mvc.common.test" />
+      <option name="MAIN_CLASS_NAME" value="com.qgh.spring_mvc.common.test.EnumTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.qgh.spring_mvc.moduels.java8.Test" />
+    <configuration name="MappingTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring_mvc_8" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.qgh.spring_mvc.moduels.java8.*" />
+          <option name="PATTERN" value="com.qgh.spring_mvc.common.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.qgh.spring_mvc.common.test" />
+      <option name="MAIN_CLASS_NAME" value="com.qgh.spring_mvc.common.test.MappingTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PageTest.testPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PageTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring_mvc_8" />
       <extension name="coverage">
         <pattern>
@@ -200,7 +201,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.qgh.spring_mvc.common.test.page" />
       <option name="MAIN_CLASS_NAME" value="com.qgh.spring_mvc.common.test.page.PageTest" />
-      <option name="METHOD_NAME" value="testPage" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -231,11 +232,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PageTest.testPage" />
+        <item itemvalue="Application.TestMain" />
+        <item itemvalue="JUnit.MappingTest.test1" />
+        <item itemvalue="JUnit.EnumTest.test1" />
         <item itemvalue="JUnit.PageTest.testPage0" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.Run" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.PageTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -288,7 +289,12 @@
       <workItem from="1589872974143" duration="3581000" />
       <workItem from="1589937642251" duration="6307000" />
       <workItem from="1592356992822" duration="22238000" />
-      <workItem from="1592388700595" duration="452000" />
+      <workItem from="1592388700595" duration="2254000" />
+      <workItem from="1592444200187" duration="3898000" />
+      <workItem from="1592538111389" duration="3500000" />
+      <workItem from="1592793178084" duration="7152000" />
+      <workItem from="1592876813137" duration="16833000" />
+      <workItem from="1592960832628" duration="9192000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交文件上传">
       <created>1585553438835</created>
@@ -311,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588240853303</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Page分页">
+      <created>1592389230414</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592389230415</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,61 +336,66 @@
     <MESSAGE value="第一次提交文件上传" />
     <MESSAGE value="表格工具包" />
     <MESSAGE value="util工具类新增" />
-    <option name="LAST_COMMIT_MESSAGE" value="util工具类新增" />
+    <MESSAGE value="Page分页" />
+    <option name="LAST_COMMIT_MESSAGE" value="Page分页" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="477" y="70" width="618" height="567" key="#com.intellij.ide.util.MemberChooser" timestamp="1592388658021">
+    <state x="477" y="70" width="618" height="567" key="#com.intellij.ide.util.MemberChooser" timestamp="1592967051831">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state x="477" y="70" width="618" height="567" key="#com.intellij.ide.util.MemberChooser/62.0.1218.720@62.0.1218.720" timestamp="1592388658021" />
-    <state x="203" y="286" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1587714212479">
+    <state x="477" y="70" width="618" height="567" key="#com.intellij.ide.util.MemberChooser/62.0.1218.720@62.0.1218.720" timestamp="1592967051831" />
+    <state x="203" y="286" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1592966492769">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state x="203" y="286" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/62.0.1218.720@62.0.1218.720" timestamp="1587714212479" />
+    <state x="203" y="286" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/62.0.1218.720@62.0.1218.720" timestamp="1592966492769" />
+    <state x="456" y="219" width="454" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1592880608519">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state x="456" y="219" width="454" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/62.0.1218.720@62.0.1218.720" timestamp="1592880608519" />
     <state x="456" y="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1587714213730">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
     <state x="456" y="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/62.0.1218.720@62.0.1218.720" timestamp="1587714213730" />
-    <state x="62" y="0" key="CommitChangelistDialog2" timestamp="1592389204951">
+    <state x="62" y="0" key="CommitChangelistDialog2" timestamp="1592389229262">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state x="62" y="0" key="CommitChangelistDialog2/62.0.1218.720@62.0.1218.720" timestamp="1592389204951" />
+    <state x="62" y="0" key="CommitChangelistDialog2/62.0.1218.720@62.0.1218.720" timestamp="1592389229262" />
     <state x="452" y="116" key="FileChooserDialogImpl" timestamp="1585553135269">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
     <state x="452" y="116" key="FileChooserDialogImpl/62.0.1218.720@62.0.1218.720" timestamp="1585553135269" />
-    <state width="1175" height="204" key="GridCell.Tab.0.bottom" timestamp="1592389185851">
+    <state width="1175" height="201" key="GridCell.Tab.0.bottom" timestamp="1592966118603">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1175" height="204" key="GridCell.Tab.0.bottom/62.0.1218.720@62.0.1218.720" timestamp="1592389185851" />
-    <state width="1175" height="204" key="GridCell.Tab.0.center" timestamp="1592389185851">
+    <state width="1175" height="201" key="GridCell.Tab.0.bottom/62.0.1218.720@62.0.1218.720" timestamp="1592966118603" />
+    <state width="1175" height="201" key="GridCell.Tab.0.center" timestamp="1592966118603">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1175" height="204" key="GridCell.Tab.0.center/62.0.1218.720@62.0.1218.720" timestamp="1592389185851" />
-    <state width="1175" height="204" key="GridCell.Tab.0.left" timestamp="1592389185851">
+    <state width="1175" height="201" key="GridCell.Tab.0.center/62.0.1218.720@62.0.1218.720" timestamp="1592966118603" />
+    <state width="1175" height="201" key="GridCell.Tab.0.left" timestamp="1592966118602">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1175" height="204" key="GridCell.Tab.0.left/62.0.1218.720@62.0.1218.720" timestamp="1592389185851" />
-    <state width="1175" height="204" key="GridCell.Tab.0.right" timestamp="1592389185851">
+    <state width="1175" height="201" key="GridCell.Tab.0.left/62.0.1218.720@62.0.1218.720" timestamp="1592966118602" />
+    <state width="1175" height="201" key="GridCell.Tab.0.right" timestamp="1592966118603">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1175" height="204" key="GridCell.Tab.0.right/62.0.1218.720@62.0.1218.720" timestamp="1592389185851" />
-    <state width="1175" height="249" key="GridCell.Tab.1.bottom" timestamp="1592388692806">
+    <state width="1175" height="201" key="GridCell.Tab.0.right/62.0.1218.720@62.0.1218.720" timestamp="1592966118603" />
+    <state width="1175" height="295" key="GridCell.Tab.1.bottom" timestamp="1592905822709">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1175" height="249" key="GridCell.Tab.1.bottom/62.0.1218.720@62.0.1218.720" timestamp="1592388692806" />
-    <state width="1175" height="249" key="GridCell.Tab.1.center" timestamp="1592388692806">
+    <state width="1175" height="295" key="GridCell.Tab.1.bottom/62.0.1218.720@62.0.1218.720" timestamp="1592905822709" />
+    <state width="1175" height="295" key="GridCell.Tab.1.center" timestamp="1592905822709">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1175" height="249" key="GridCell.Tab.1.center/62.0.1218.720@62.0.1218.720" timestamp="1592388692806" />
-    <state width="1175" height="249" key="GridCell.Tab.1.left" timestamp="1592388692806">
+    <state width="1175" height="295" key="GridCell.Tab.1.center/62.0.1218.720@62.0.1218.720" timestamp="1592905822709" />
+    <state width="1175" height="295" key="GridCell.Tab.1.left" timestamp="1592905822709">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1175" height="249" key="GridCell.Tab.1.left/62.0.1218.720@62.0.1218.720" timestamp="1592388692806" />
-    <state width="1175" height="249" key="GridCell.Tab.1.right" timestamp="1592388692806">
+    <state width="1175" height="295" key="GridCell.Tab.1.left/62.0.1218.720@62.0.1218.720" timestamp="1592905822709" />
+    <state width="1175" height="295" key="GridCell.Tab.1.right" timestamp="1592905822709">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1175" height="249" key="GridCell.Tab.1.right/62.0.1218.720@62.0.1218.720" timestamp="1592388692806" />
+    <state width="1175" height="295" key="GridCell.Tab.1.right/62.0.1218.720@62.0.1218.720" timestamp="1592905822709" />
     <state width="1175" height="7" key="GridCell.Tab.2.bottom" timestamp="1592384431144">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
@@ -406,14 +424,14 @@
       <screen x="62" y="0" width="1218" height="720" />
     </state>
     <state x="264" y="94" key="Vcs.Push.Dialog.v2/62.0.1218.720@62.0.1218.720" timestamp="1588240874216" />
-    <state x="356" y="185" key="com.intellij.ide.util.TipDialog" timestamp="1589418726300">
+    <state x="356" y="185" key="com.intellij.ide.util.TipDialog" timestamp="1592960838870">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state x="356" y="185" key="com.intellij.ide.util.TipDialog/62.0.1218.720@62.0.1218.720" timestamp="1589418726300" />
-    <state x="468" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592389206971">
+    <state x="356" y="185" key="com.intellij.ide.util.TipDialog/62.0.1218.720@62.0.1218.720" timestamp="1592960838870" />
+    <state x="468" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592991260423">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state x="468" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/62.0.1218.720@62.0.1218.720" timestamp="1592389206971" />
+    <state x="468" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/62.0.1218.720@62.0.1218.720" timestamp="1592991260423" />
     <state x="494" y="82" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1592377010961">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
@@ -430,10 +448,10 @@
       <screen x="62" y="0" width="1218" height="720" />
     </state>
     <state x="328" y="161" key="run.anything.popup/62.0.1218.720@62.0.1218.720" timestamp="1584502763181" />
-    <state x="335" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1592372685663">
+    <state x="335" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1592967084266">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state x="335" y="41" width="672" height="678" key="search.everywhere.popup/62.0.1218.720@62.0.1218.720" timestamp="1592372685663" />
+    <state x="335" y="41" width="672" height="678" key="search.everywhere.popup/62.0.1218.720@62.0.1218.720" timestamp="1592967084266" />
     <state x="481" y="265" key="svn.upgradeDialog" timestamp="1584523833371">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
@@ -605,6 +623,36 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/page/PageInterceptor.java</url>
           <line>133</line>
           <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/page/PageInterceptor1.java</url>
+          <line>360</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/page/PageInterceptor1.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/handler/SexEnumTypeHandler.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/handler/SexEnumTypeHandler.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/handler/SexEnumTypeHandler.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/moduels/handler/SexEnumTypeHandler.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/com/qgh/spring_mvc/common/util/page/PageInterceptor.java</url>
