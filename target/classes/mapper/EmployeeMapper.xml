@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qgh.spring_mvc.moduels.dao.EmployeeDao">
+    <resultMap type="com.qgh.spring_mvc.moduels.bean.Employee" id="employee">
+        <id column="id" property="id"/>
+        <result column="real_name" property="realName"/>
+        <result column="sex" property="sex" typeHandler="com.qgh.spring_mvc.moduels.handler.SexEnumTypeHandler"/>
+        <result column="birthday" property="birthday"/>
+        <result column="mobile" property="mobile"/>
+        <result column="email" property="email"/>
+        <result column="position" property="position"/>
+        <result column="note" property="note"/>
+        <!--association元素，对工牌进行一对一级联-->
+        <association property="workCard" column="id" select="com.qgh.spring_mvc.moduels.dao.WorkCardDao.getWorkCardByEmpId"/>
+        <!--collection元素，一对多级联-->
+        <collection property="emplyeeTaskList" column="id"
+                    select="com.qgh.spring_mvc.moduels.dao.EmployeeTaskDao.getEmployeeTaskByEmpId"/>
+        <!--discriminator元素，鉴别器-->
+        <discriminator javaType="long" column="sex">
+            <case value="1" resultMap="maleHealthFormMapper"/>
+            <case value="2" resultMap="femaleHealthFormMapper"/>
+        </discriminator>
+    </resultMap>
+
+    <resultMap type="com.qgh.spring_mvc.moduels.bean.FemaleEmployee" id="femaleHealthFormMapper" extends="employee">
+        <association property="femaleHealthForm" column="id"
+                     select="com.qgh.spring_mvc.moduels.dao.FemaleHealthFormDao.getFemaleHealthForm"/>
+    </resultMap>
+
+    <resultMap type="com.qgh.spring_mvc.moduels.bean.MaleEmployee" id="maleHealthFormMapper" extends="employee">
+        <association property="maleHealthForm" column="id" select="com.qgh.spring_mvc.moduels.dao.MaleHealthFormDao.getMaleHealthForm"/>
+    </resultMap>
+
+    <select id="getEmployee" parameterType="long" resultMap="employee">
+        select id,
+               real_name ,
+               sex,
+               birthday,
+               mobile,
+               email,
+               position,
+               note
+        from t_employee
+        where id = #{id}
+    </select>
+</mapper>

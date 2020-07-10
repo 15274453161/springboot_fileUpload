@@ -7,6 +7,7 @@ import com.qgh.spring_mvc.moduels.service.OrgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -21,12 +22,12 @@ public class OrgServiceImpl implements OrgService {
     @Autowired
     private OrgDao orgDao;
     @Override
-    public List<OrgBean> queryPage(Page page) {
+    public List<OrgBean> queryPage4cssp(Page page) {
         return orgDao.queryPage(page);
     }
 
     @Override
-    public List<OrgBean> query(OrgBean orgBean) {
+    public List<OrgBean> query4cssp(OrgBean orgBean) {
         return orgDao.query(orgBean);
     }
 }

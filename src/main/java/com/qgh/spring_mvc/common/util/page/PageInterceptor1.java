@@ -46,7 +46,7 @@ import java.util.Properties;
                 args = {Connection.class,Integer.class}
         )
 })
-@Component
+//@Component
 public class PageInterceptor1 implements Interceptor {
     @Value("${mybatis.page-type.databaseType}")
     private String databaseType;//数据库类型，不同的数据库有不同的分页方法

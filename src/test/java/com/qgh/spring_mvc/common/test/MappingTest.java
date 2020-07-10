@@ -39,17 +39,17 @@ public class MappingTest {
         System.out.println(employeeTask);
     }*/
 
-   /* @Test
+    @Test
     public void test1(){
        Employee employee = employeeDao.getEmployee(1);
        //System.out.println(employee);
         //JSONObject jsonObject = JSONObject.fromObject(employee);
         String jsonObject = new   Gson().toJson(employee);
          System.out.println(jsonObject);
-    }*/
+    }
 
     @Test
-    public void test1(){
+    public void test2(){
         SqlSession sqlSession = SqlSessionFactoryUtils.openSqlSession();
         EmployeeDao em = sqlSession.getMapper(employeeDao.getClass());
 

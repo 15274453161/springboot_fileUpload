@@ -193,6 +193,9 @@ public class ExcelUtil<T> implements Serializable {
             if (list != null && list.size() >= 0) {
                 listSize = list.size();
             }
+            /**创建单元格*/
+            HSSFFont newFont = book.createFont();
+            HSSFCellStyle newCellStyle = book.createCellStyle();
             double sheetNo = Math.ceil((listSize / sheetSize));
             for (int index = 0; index <= sheetNo; ++index) {
                 //产生工作表对象
@@ -214,8 +217,7 @@ public class ExcelUtil<T> implements Serializable {
                //设置大标题内容
                 cell.setCellValue("个人信息登记表");
                 /** ****标红列样式 被标记了的字段使用*** **/
-                HSSFFont newFont = book.createFont();
-                HSSFCellStyle newCellStyle = book.createCellStyle();
+
                 newFont.setFontName("Arail narrow");//字体
                 newFont.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
                 //第二行是标题字段
@@ -286,7 +288,7 @@ public class ExcelUtil<T> implements Serializable {
                                 newCellStyle.setFont(newFont);
                                 cell.setCellStyle(newCellStyle);
                             } else {
-                                cell.setCellStyle(createContentStyle(book));
+                              //  cell.setCellStyle(createContentStyle(book));
                             }
                             //如果数据存在就填入 不存在就填入空格
                             Class<?> classType = field.getType();

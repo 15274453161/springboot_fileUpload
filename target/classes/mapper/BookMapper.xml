@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qgh.spring_mvc.moduels.dao.BookDao">
+    <!--ResultSet映射-->
+    <resultMap id="bookMap" type="com.qgh.spring_mvc.moduels.bean.Book">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <!--用整数下标-->
+        <result column="type_id" property="typeId" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
+        <!--用枚举字符串名称-->
+        <result column="type_name" property="typeName" typeHandler="org.apache.ibatis.type.EnumTypeHandler"/>
+    </resultMap>
+    <!--按id查询书-->
+    <select id="getBook" parameterType="int" resultMap="bookMap">
+        SELECT
+            id,
+            name,
+            type_id,
+            type_name
+        FROM book
+        WHERE id = #{id}
+    </select>
+    <!--插入一本新书,typeId用整数下标的处理器,typeName用枚举字符串名称的处理器-->
+    <insert id="addBook" parameterType="com.qgh.spring_mvc.moduels.bean.Book">
+        INSERT INTO book (id,name, type_id, type_name)
+        VALUES (#{id},#{name}, #{typeId,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler},
+                #{typeName,typeHandler=org.apache.ibatis.type.EnumTypeHandler})
+    </insert>
+</mapper>

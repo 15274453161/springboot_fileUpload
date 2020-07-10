@@ -1,5 +1,7 @@
 package com.qgh.spring_mvc.common.util;
 
+import com.qgh.spring_mvc.moduels.bean.AccountBean;
+import com.qgh.spring_mvc.moduels.service.AccountService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -9,6 +11,10 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import redis.clients.jedis.JedisPool;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.List;
 
 /**
  * @author 秦光泓
@@ -26,6 +32,8 @@ class ExcelUtilTest {
     @Autowired
     private JedisPool jedisPool;
     private static Logger logger = LoggerFactory.getLogger(ExcelUtilTest.class);
+    @Autowired
+    AccountService accountService;
    /* @Test
     void getExcelToList() {
         // 初始化数据
@@ -55,4 +63,21 @@ class ExcelUtilTest {
         System.out.println(redisUtil.get("123"));
 
     }*/
+
+     @Test
+    void getExcelToList() {
+        // 初始化数据
+        List<AccountBean> list = accountService.getAccountInfo();
+
+        FileOutputStream out = null;
+        try {
+            //这个的作用
+            out = new FileOutputStream("d:\\userAccount.xls");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        ExcelUtil<AccountBean> util = new ExcelUtil<>(AccountBean.class);// 创建工具类.
+        util.getListToExcel(list, "用户信息", out);// 导出
+        logger.info("----执行完毕----------");
+    }
 }

@@ -34,7 +34,7 @@ public class PageController {
         Page<OrgBean> page = new Page();
         OrgBean orgBean = new OrgBean();
         orgBean.setPage(page);
-        List<OrgBean> orgBeans = orgService.queryPage(page);
+        List<OrgBean> orgBeans = orgService.queryPage4cssp(page);
         logger.warn("分页结果",orgBeans);
         return "lll";
     }

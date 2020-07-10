@@ -14,7 +14,7 @@ import redis.clients.jedis.JedisPoolConfig;
  * @date 2020年1月6日 下午2:27:14
  * 
  */
-@Configuration
+//@Configuration
 public class RedisConfig extends CachingConfigurerSupport {
  
     @Value("${spring.redis.host}")

@@ -45,7 +45,7 @@ import java.util.Properties;
                 args = {Connection.class,Integer.class}
         )
 })
-//@Component //暂时注销
+@Component //暂时注销
 public class PageInterceptor implements Interceptor {
     @Value("${mybatis.page-type.databaseType}")
     private String databaseType;//数据库类型，不同的数据库有不同的分页方法
@@ -80,6 +80,7 @@ public class PageInterceptor implements Interceptor {
         //这里我们简单的通过传入的是Page对象就认定它是需要进行分页操作的。
         if (obj instanceof Page<?>) {
             Page<?> page = (Page<?>) obj;
+          /**最好判断拿到的Page对象的参数是否合法*/
 
             /**通过反射获取delegate父类BaseStatementHandler的mappedStatement属性
              * file [D:\ideaworkspace\maven\springboot\spring_mvc_8\target\classes\mapper\OrgMapper.xml] 该方法所属的mapper
@@ -103,7 +104,7 @@ public class PageInterceptor implements Interceptor {
             ReflectUtil.setFieldValue(boundSql, "sql", pageSql);
 
         }
-
+       /**调用真实方法*/
         return invocation.proceed();
     }
 
@@ -256,7 +257,7 @@ public class PageInterceptor implements Interceptor {
      */
     private String getCountSql(String sql) {
         /**indexof区分大小写 需要将sql全部转换为小写*/
-        int index = sql.toLowerCase().indexOf("from");
+        int index = sql.trim().toLowerCase().indexOf("from");
         return "select count(*) " + sql.substring(index);
 
     }

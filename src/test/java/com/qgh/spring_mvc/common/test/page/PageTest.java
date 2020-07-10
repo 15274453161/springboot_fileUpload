@@ -38,9 +38,9 @@ public class PageTest {
         System.out.println(orgBeans);
     }*/
 
-    @Test
+   /* @Test
     public void test() {
-        /**默认首页1 显示15条记录*/
+        *//**默认首页1 显示15条记录*//*
 
         OrgBean orgBean = new OrgBean();
         List<OrgBean> orgBeans = orgService.query(orgBean);
@@ -55,5 +55,5 @@ public class PageTest {
         orgBean.setPage(page);
         List<OrgBean> orgBeans = orgService.query(orgBean);
         System.out.println(orgBeans);
-    }
+    }*/
 }

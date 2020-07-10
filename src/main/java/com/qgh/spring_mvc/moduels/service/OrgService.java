@@ -13,6 +13,6 @@ import java.util.List;
  * @date 2020/6/1714:11
  */
 public interface OrgService {
-    List<OrgBean> queryPage(Page page);
-    List<OrgBean> query(OrgBean orgBean);
+    List<OrgBean> queryPage4cssp(Page page);
+    List<OrgBean> query4cssp(OrgBean orgBean);
 }

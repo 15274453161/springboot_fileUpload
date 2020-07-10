@@ -13,54 +13,54 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class SpringTool implements ApplicationContextAware {
-    private static Logger logger = Logger.getLogger(SpringTool.class);
-    private static ApplicationContext applicationContext = null;
+    private static ApplicationContext applicationContext;
+    private static final Logger logger = Logger.getLogger(SpringTool.class);
 
     @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException
-    {
-        logger.info("------SpringContextUtil setApplicationContext-------");
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        logger.info("applicationContext setter");
         SpringTool.applicationContext = applicationContext;
     }
 
     public static ApplicationContext getApplicationContext() {
         return applicationContext;
     }
-
-    /**
-     * 注意 bean name默认 = 类名(首字母小写)
-     * 例如: A8sClusterDao = getBean("a8sClusterDao")
+    /***
+    * 根据类名小写获取Spring管理的bean
      * @param name
-     * @return
-     * @throws BeansException
-     */
-    public static Object getBean(String name) throws BeansException {
+    * @return java.lang.Object
+    * @date 2020/6/30  11:08
+    */
+
+    public Object getName(String name){
         return applicationContext.getBean(name);
     }
-
-    /**
-     * 根据类名获取到bean
-     * @param <T>
+    /***
+    * 根据类名获取Spring管理的bean
      * @param clazz
-     * @return
-     * @throws BeansException
-     */
-    @SuppressWarnings("unchecked")
-    public static <T> T getBeanByName(Class<T> clazz) throws BeansException {
-        try {
-            char[] cs=clazz.getSimpleName().toCharArray();
-            //首字母大写到小写
-            cs[0] += 32;
-            return (T) applicationContext.getBean(String.valueOf(cs));
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+    * @return T
+    * @date 2020/6/30  11:18
+    */
+
+    public <T> T getName(Class<?> clazz){
+      return (T) applicationContext.getBean(clazz);
     }
+    /***
+    * 判断Spring中是否存在此bean
+     * @param name
+    * @return boolean
+    * @date 2020/6/30  11:20
+    */
 
     public static boolean containsBean(String name) {
         return applicationContext.containsBean(name);
     }
+   /***
+   * 判断是否是单例
+    * @param name
+   * @return boolean
+   * @date 2020/6/30  11:20
+   */
 
     public static boolean isSingleton(String name) throws NoSuchBeanDefinitionException {
         return applicationContext.isSingleton(name);

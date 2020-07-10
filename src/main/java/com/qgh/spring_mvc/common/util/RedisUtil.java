@@ -21,7 +21,7 @@ import java.util.Set;
  * 
  * @author liuwenfeng 2019-12-26
  */
-@Component
+//@Component
 @Slf4j
 public class RedisUtil {
 

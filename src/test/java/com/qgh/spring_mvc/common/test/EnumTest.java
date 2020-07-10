@@ -21,8 +21,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class EnumTest {
     @Autowired
     private BookDao bookDao;
-    @Test
-    public void test1(){
+   // @Test
+   /* public void test1(){
         //建立一本书,注意后面两个类别属性其实是一样的,只是为了测试使用不同的枚举类型处理器他们在数据库中的不同表现
         Book book1=new Book();
         book1.setId(1);
@@ -39,11 +39,11 @@ public class EnumTest {
         //插入,这里顺便测试一下带返回值能不能正确显示受影响行数
         int rows0=bookDao.addBook(book1);
         System.out.println("成功插入,"+rows0+"行受影响");
-       /* //查出来
+       *//* //查出来
         Book book2=bookDao.getBook(1);
         if (book2 != null){
             System.out.println(book2.getTypeId()+"和"+book2.getTypeName()+"都能正常变回枚举类型");
-        }*/
+        }*//*
 
-    }
+    }*/
 }

@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/mapping")
 public class MappingController {
-    @Autowired
+   /* @Autowired
     private EmployeeDao employeeDao;
-
+*/
     /* @GetMapping  (value = "/get")
     public Result get(){
         Employee employee = employeeDao.getEmployee(1);
@@ -26,11 +26,11 @@ public class MappingController {
        // return "lll";
     }*/
 
-    @PostMapping(value = "/get0",produces = "application/json")
+  /*  @PostMapping(value = "/get0",produces = "application/json")
     public Result get(@RequestBody Employee employee0){
         Employee employee = employeeDao.getEmployee(1);
         return new Result("200","操作成功",employee);
         // return "lll";
-    }
+    }*/
 
 }

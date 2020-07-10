@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qgh.spring_mvc.moduels.dao.AccountDao">
+
+
+    <!--查询账号信息-->
+    <select id="getAccountInfo"
+            resultType="com.qgh.spring_mvc.moduels.bean.AccountBean">
+        select ACCOUNT_ID as accountId,ACCOUNT_NAME as accountName,ACCOUNT_PWD as accountPwd,SFZH as sfzh,
+       PHONE as phone,SEX as sex,NATION as nation,ADDRESS as address,COMPANY as company,OPENID as openid,
+        STATUS as status,ROLE_CODE as roleCode,DESCRIPTION as description,ALIPAYID as alipayId,CHANNELCODE as channelcode,
+        to_char(CREATE_TIME,'YYYY-mm-dd') as createTime
+         from T_YTH_ACCOUNT_INFO a
+         order by a.CREATE_TIME desc
+    </select>
+
+
+</mapper>
