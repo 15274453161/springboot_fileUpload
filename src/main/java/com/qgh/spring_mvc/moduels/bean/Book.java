@@ -18,4 +18,22 @@ public class Book {
     private BookType typeId;
     private BookType typeName;
 
+    public Book(){}
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", typeId=" + typeId +
+                ", typeName=" + typeName +
+                '}';
+    }
+
+    public Book(int id, String name, BookType typeId, BookType typeName) {
+        this.id = id;
+        this.name = name;
+        this.typeId = typeId;
+        this.typeName = typeName;
+    }
 }

@@ -7,11 +7,14 @@ import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-/**排除启动就启动redis*/
-/*@SpringBootApplication(exclude={
+/**
+ * 排除启动就启动redis
+ */
+@SpringBootApplication(exclude = {
         RedisAutoConfiguration.class,
-        RedisRepositoriesAutoConfiguration.class})*/
-@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+        RedisRepositoriesAutoConfiguration.class})
+//@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+
 @MapperScan("com.qgh.spring_mvc.moduels.dao")//自动扫描接口映射器
 public class SpringMvcApplication {
 

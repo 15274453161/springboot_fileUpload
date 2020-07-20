@@ -1,6 +1,6 @@
 package com.qgh.spring_mvc.moduels.bean;
 
-import com.qgh.spring_mvc.common.util.ExcelAttribute;
+import com.qgh.spring_mvc.common.util.excel.ExcelAttribute;
 import lombok.Data;
 
 /**
@@ -12,14 +12,14 @@ import lombok.Data;
  */
 @Data
 public class AccountBean {
-    @ExcelAttribute(name = "姓名",column = "B")
+    @ExcelAttribute(name="用户名",column = "B")
     private String accountName;//用户名
-    @ExcelAttribute(name = "身份证",column = "C")
+    @ExcelAttribute(name="身份证",column = "C")
     private String SFZH;//身份证
-    @ExcelAttribute(name = "手机号",column = "D")
+    @ExcelAttribute(name="手机号",column = "D")
     private String phone;//手机号
-    @ExcelAttribute(name = "使用类型",column = "E")
+    @ExcelAttribute(name="使用类型",column = "E")
     private String channelcode;//渠道编码 注册渠道类型
-    @ExcelAttribute(name = "创建时间",column = "F")
+    @ExcelAttribute(name="创建时间",column = "F")
     private String createTime;//创建时间
 }

@@ -1,6 +1,5 @@
 package com.qgh.spring_mvc.common.controller.bean;
 
-import com.qgh.spring_mvc.common.util.ExcelAttribute;
 import org.apache.ibatis.type.Alias;
 
 /**
@@ -14,11 +13,8 @@ import org.apache.ibatis.type.Alias;
 public class User {
 
     private Integer id;
-    @ExcelAttribute(name = "姓名",column = "A")
     private String name;
-    @ExcelAttribute(name = "密码",column = "B")
     private String password;
-    @ExcelAttribute(name = "性别",column = "C")
     private int sex;
 
     public Integer getId() {

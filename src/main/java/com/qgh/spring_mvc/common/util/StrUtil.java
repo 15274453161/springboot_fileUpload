@@ -267,25 +267,20 @@ public class StrUtil {
 		return ret.toString();
 	}
 	
-	public String toHex( int dataLen ){
-		return Integer.toHexString( dataLen );
-	}
-	
 	/**左对齐，右补空格*/
 	public static String strToOutlen( String input , int outLen ) {
 		StringBuilder ret = new StringBuilder();
-		
+
 		if( input != null ){
 			ret.append( input );
 		}
 		for (int i = StrUtil.toHexStr(input).length()/2; i < outLen; i++) {
 			ret.append(" ");
 		}
-		
+
 //		Log.d("", "strToOutlen:" + ret.length());
 		return ret.toString();
 	}
-
 	
 	/**
 	 * 十六进制表示长度(拓展)
@@ -298,13 +293,13 @@ public class StrUtil {
 			if ( lenStrLen < 0 ) {
 				lenStrLen = -lenStrLen;
 			}
-			
+
 			byte[] bytes = new byte[4];
 			bytes[3] = (byte) lenInt;
 			bytes[2] = (byte) (lenInt >> 8);
 			bytes[1] = (byte) (lenInt >> 8 * 2);
 			bytes[0] = (byte) (lenInt >> 8 * 3);
-			
+
 			String bytesStr = bcd2Str(bytes);
 			int bytesLen = bytesStr.length();
 			if ( bytesLen > lenStrLen ) {
@@ -318,7 +313,7 @@ public class StrUtil {
 		}
 		return ret.toString();
 	}
-	
+
 	/**
 	 * 十进制表示长度
 	 * @param lenInt 长度值
@@ -330,7 +325,7 @@ public class StrUtil {
 			if ( lenStrLen < 0 ) {
 				lenStrLen = -lenStrLen;
 			}
-			
+
 			String lenIntStr = "" + lenInt;
 			int bytesLen = lenIntStr.length();
 			if ( bytesLen > lenStrLen ) {
@@ -356,7 +351,7 @@ public class StrUtil {
 			"",
 			""
 		};
-		
+
 		if ( src != null && src.length()>0 ) {
 			if ( index > 0 ) {
 				if ( index > src.length() ) {
@@ -379,7 +374,7 @@ public class StrUtil {
 		}
 		return retString;
 	}
-
+	
 	public static String[] cutStrFile( String src, int index ) {
 		String [] retString = new String[]{
 				"",
@@ -452,7 +447,7 @@ public class StrUtil {
 	public static String subByTag(String src, String tag){
 		StringBuilder ret = new StringBuilder();
 		if ( src != null && tag!=null && tag.length()>0 && tag.length()<src.length() ) {
-			
+
 			int index = src.toUpperCase().indexOf(tag.toUpperCase());
 //			int index = src.toUpperCase().lastIndexOf(tag.toUpperCase());//20171110yibin发现密码返回错误帧
 
@@ -462,6 +457,7 @@ public class StrUtil {
 		}
 		return ret.toString();
 	}
+
 	/**
 	 * 截取字符串 (不区分大小写)
 	 * @param src 源字符串
@@ -477,7 +473,7 @@ public class StrUtil {
 			if( lenB>0 && lenE>0 ) {
 				int indexB = src.toUpperCase().indexOf(tagB.toUpperCase());
 				int indexE = src.toUpperCase().indexOf(tagE.toUpperCase());
-				
+
 				if ( indexB>=0 && indexB<indexE && indexE<src.length() ) {
 					ret.append( src.substring( indexB+lenB, indexE ) );
 				}
@@ -485,7 +481,7 @@ public class StrUtil {
 		}
 		return ret.toString();
 	}
-	
+
 	/**
 	 * YYYYMMDD --> YYYY-MM-DD
 	 * YYMMDD --> YY-MM-DD
@@ -493,21 +489,19 @@ public class StrUtil {
 	 */
 	public static String toYYYYMMDD( String time ) {
 		if ( time != null && time.length()>0 ) {
-			
+
 			if ( time.length() >= 8 ) {
-				return time.substring(0, 4) + "-" + time.substring(4, 6) + "-" + time.substring(6, 8);	
+				return time.substring(0, 4) + "-" + time.substring(4, 6) + "-" + time.substring(6, 8);
 			}
-			
+
 			if ( time.length() == 6 ) {
-				return time.substring(0, 2) + "-" + time.substring(2, 4) + "-" + time.substring(4, 6);	
+				return time.substring(0, 2) + "-" + time.substring(2, 4) + "-" + time.substring(4, 6);
 			}
 		}
-		
+
 		return "";
 	}
-
-	//20161109 by zhu
-
+	
 	/**
 	 * 计算 10进制 长度
 	 * @param src	原数据
@@ -525,6 +519,8 @@ public class StrUtil {
 		}
 		return realLen;
 	}
+
+	//20161109 by zhu
 
 	/**
 	 * 计算 16进制 长度
@@ -550,10 +546,6 @@ public class StrUtil {
 		return realLen;
 	}
 
-	// 提供外部使用end---------------------------------------------------------------------
-
-	// 私有成员begin---------------------------------------------------------------------
-
 	/**
 	 * 将给定的十六进制字符转换为对应的十六进制值 输入：byte asc -- 给定的十六进制字符('0'-'9'、'a'-'f'、'A'-'F')
 	 * 返回值：给定的十六进制字符对应的十六进制值 '0'-'9' --> 0x00-0x09 'a'-'f' --> 0x0A-0x0F 'A'-'F'
@@ -573,7 +565,9 @@ public class StrUtil {
 		return bcd;
 	}
 
-	// 私有成员end---------------------------------------------------------------------
+	// 提供外部使用end---------------------------------------------------------------------
+
+	// 私有成员begin---------------------------------------------------------------------
 
 	//code by zhuwenquan on 2018/12/4 09:28
 	public static int getInt( String iStr ){
@@ -586,6 +580,8 @@ public class StrUtil {
 		}
 		return 0;
 	}
+
+	// 私有成员end---------------------------------------------------------------------
 
 	/**
 	 * 判断字符串是否为空
@@ -766,15 +762,15 @@ public class StrUtil {
 		return array == null || array.length == 0;
 	}
 
-
 	//code by zhuwenquan on 2019/8/31 18:13
 	public static String toFileStr(String src, String copyStr, int len){
 		return toFileStr( src,  copyStr, len, true, BANK_FILE_ENCODING_TYPE);
 	}
+
 	public static String toFileStr(String src, String copyStr, int len,String ecode){
 		return toFileStr( src,  copyStr, len, true, ecode);
 	}
-	
+
 	public static String copyStrLeft(String src, String copyStr, int len) {
 		return toFileStr( src,  copyStr, len, false, BANK_FILE_ENCODING_TYPE);
 	}
@@ -782,7 +778,7 @@ public class StrUtil {
 	public static String copyStrLeft(String src, String copyStr, int len,String ecode) {
 		return toFileStr( src,  copyStr, len, false, ecode);
 	}
-
+	
 	/**
 	 *
 	 * @param src   源字符
@@ -820,7 +816,6 @@ public class StrUtil {
 		return builder.toString();
 	}
 
-
 	public static int getStrLen(String src, String encode){
 		try {
 			return src.getBytes(encode).length;
@@ -837,7 +832,35 @@ public class StrUtil {
 		}
 	}
 
+	/**
+	 * <p>
+	 * Description:判断字段真实长度(中文2个字符,英文1个字符)
+	 * </p>
+	 *
+	 * @param value
+	 * @return
+	 */
+	public static int getStringLength(String value) {
+		int valueLength = 0;
+		String chinese = "[\u4e00-\u9fa5]";
+		for (int i = 0; i < value.length(); i++) {
+			String temp = value.substring(i, i + 1);
+			if (temp.matches(chinese)) {
+				valueLength += 2;
+			} else {
+				valueLength += 1;
+			}
+		}
+		return valueLength;
+	}
+
 	public static void main(String[] args) {
-		System.out.println(copyStrLeft("20","0",10));
+
+		//System.out.println(copyStrLeft("20","0",10));
+		System.out.println(getStringLength("秦光泓"));
+	}
+
+	public String toHex( int dataLen ){
+		return Integer.toHexString( dataLen );
 	}
 }

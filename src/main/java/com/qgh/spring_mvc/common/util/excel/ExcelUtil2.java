@@ -1,5 +1,6 @@
-package com.qgh.spring_mvc.common.util;
+package com.qgh.spring_mvc.common.util.excel;
 
+import com.qgh.spring_mvc.common.util.CommUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.apache.poi.hssf.usermodel.*;
@@ -47,12 +48,12 @@ import java.util.*;
  * <p>
  * 6.用注解设置是否只导出标题而不导出内容,这在导出内容作为模板以供用户填写时比较实用. </p>
  */
-public class ExcelUtil<T> implements Serializable {
+public class ExcelUtil2<T> implements Serializable {
     private static final long serialVersionUID = 551970754610248636L;
     //代表要导出的实体类
     private Class<T> clazz;
 
-    public ExcelUtil(Class<T> clazz) {
+    public ExcelUtil2(Class<T> clazz) {
         this.clazz = clazz;
     }
 
@@ -193,9 +194,6 @@ public class ExcelUtil<T> implements Serializable {
             if (list != null && list.size() >= 0) {
                 listSize = list.size();
             }
-            /**创建单元格*/
-            HSSFFont newFont = book.createFont();
-            HSSFCellStyle newCellStyle = book.createCellStyle();
             double sheetNo = Math.ceil((listSize / sheetSize));
             for (int index = 0; index <= sheetNo; ++index) {
                 //产生工作表对象
@@ -217,7 +215,8 @@ public class ExcelUtil<T> implements Serializable {
                //设置大标题内容
                 cell.setCellValue("个人信息登记表");
                 /** ****标红列样式 被标记了的字段使用*** **/
-
+                HSSFFont newFont = book.createFont();
+                HSSFCellStyle newCellStyle = book.createCellStyle();
                 newFont.setFontName("Arail narrow");//字体
                 newFont.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
                 //第二行是标题字段
@@ -288,7 +287,7 @@ public class ExcelUtil<T> implements Serializable {
                                 newCellStyle.setFont(newFont);
                                 cell.setCellStyle(newCellStyle);
                             } else {
-                              //  cell.setCellStyle(createContentStyle(book));
+                                cell.setCellStyle(createContentStyle(book));
                             }
                             //如果数据存在就填入 不存在就填入空格
                             Class<?> classType = field.getType();

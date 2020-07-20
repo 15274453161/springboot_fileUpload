@@ -23,10 +23,10 @@ import java.util.Map;
  * @description: TODO
  * @date 2020/7/918:04
  */
-@Configuration
+//@Configuration
 public class DataSourceConfig {
     private static final Logger logger = LoggerFactory.getLogger(DataSourceConfig.class);
-    @Bean(name = "primaryDataSource")
+   // @Bean(name = "primaryDataSource")
     @Qualifier("primaryDataSource")
     @Primary
     @ConfigurationProperties(prefix = "spring.datasource.base")
@@ -34,7 +34,7 @@ public class DataSourceConfig {
         return DataSourceBuilder.create().build();
     }
 
-    @Bean(name = "secondaryDataSource")
+  //  @Bean(name = "secondaryDataSource")
     @Qualifier("secondaryDataSource")
     @ConfigurationProperties(prefix = "spring.datasource.slave")
     public DataSource secondaryDataSource() {
@@ -46,7 +46,7 @@ public class DataSourceConfig {
      * 获取动态数据源
      * @return
      */
-    @Bean(name = "dynamicDataSource")
+  //  @Bean(name = "dynamicDataSource")
     public DataSource dynamicDataSource() {
         logger.info("dynamicDataSource===========");
         DynamicDataSource dynamicDataSource = new DynamicDataSource();
@@ -66,7 +66,7 @@ public class DataSourceConfig {
     * @return org.springframework.transaction.PlatformTransactionManager
     * @date 2020/7/9  18:13
     */
-    @Bean
+  //  @Bean
     public PlatformTransactionManager transactionManager() {
         return new DataSourceTransactionManager(dynamicDataSource());
     }

@@ -11,21 +11,14 @@ package com.qgh.spring_mvc.common.util;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang.StringUtils;
-import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.SerializationConfig;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.codehaus.jackson.type.JavaType;
-import org.codehaus.jackson.type.TypeReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /***
  *
@@ -34,8 +27,8 @@ import java.util.Map;
  */
 
 
-public class JsonHelper {
-    private static final Logger logger = LoggerFactory.getLogger(JsonHelper.class);
+public class JsonHelpers {
+    private static final Logger logger = LoggerFactory.getLogger(JsonHelpers.class);
     /**
      * 需要第三方依赖---->jackson-mapper-asl
      */

@@ -1,7 +1,7 @@
 package com.qgh.spring_mvc.common.controller;
 
-import com.qgh.spring_mvc.common.util.ExcelUtil;
 import com.qgh.spring_mvc.common.util.FileUtil;
+import com.qgh.spring_mvc.common.util.excel.ExcelUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;

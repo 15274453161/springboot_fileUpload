@@ -1,13 +1,14 @@
-package com.qgh.spring_mvc.common.util;
+package com.qgh.spring_mvc.common.util.excel;
 
 import com.qgh.spring_mvc.common.util.CommUtil;
-import com.qgh.spring_mvc.common.util.ExcelAttribute;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.ss.util.CellRangeAddressList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.InputStream;
@@ -49,13 +50,18 @@ import java.util.*;
  * <p>
  * 6.用注解设置是否只导出标题而不导出内容,这在导出内容作为模板以供用户填写时比较实用. </p>
  */
-public class ExcelUtil2<T> implements Serializable {
+public class ExcelUtil<T> implements Serializable {
     private static final long serialVersionUID = 551970754610248636L;
+    private static Logger logger = LoggerFactory.getLogger(ExcelUtil2.class);
     //代表要导出的实体类
     private Class<T> clazz;
 
-    public ExcelUtil2(Class<T> clazz) {
+    public ExcelUtil(Class<T> clazz) {
         this.clazz = clazz;
+    }
+
+    public ExcelUtil() {
+
     }
 
     /**
@@ -100,7 +106,7 @@ public class ExcelUtil2<T> implements Serializable {
                     }
                 }
                 //从第二行开始取出数据，默认第一行是表头
-                for (int i = 0, len = rows; i < len; ++i) {
+                for (int i = 2, len = rows; i < len; ++i) {
                     //得到一行中的所有单元格对象
                     HSSFRow row = sheet.getRow(i);
                     Iterator<Cell> cells = row.cellIterator();
@@ -108,7 +114,7 @@ public class ExcelUtil2<T> implements Serializable {
                     int index = 0;
                     while (cells.hasNext()) {
                         //单元格中的内容
-                        String c = cells.next().getStringCellValue();
+                        String c = getCellValue(cells.next());
                         //内容为空 指针指向下一个格子
                         if (!StringUtils.isNoneBlank(c)) {
                             continue;
@@ -129,28 +135,8 @@ public class ExcelUtil2<T> implements Serializable {
                         if (fieldType == null) {
                             continue;
                         }
-
-                        if (String.class == fieldType) {
-                            field.set(entity, String.valueOf(c));
-                        } else if (BigDecimal.class == fieldType) {
-                            c = c.indexOf("%") != -1 ? c.replace("%", "") : c;
-                            field.set(entity, BigDecimal.valueOf(Double.valueOf(c)));
-                        } else if (Date.class == fieldType) {
-                            field.set(entity, DateUtils.parseDate(c));
-                        } else if (Integer.class == fieldType || Integer.TYPE == fieldType) {
-                            field.set(entity, Integer.parseInt(c));
-                        } else if (Long.class == fieldType || Long.TYPE == fieldType) {
-                            field.set(entity, Long.valueOf(c));
-                        } else if (Float.class == fieldType || Float.TYPE == fieldType) {
-                            field.set(entity, Float.valueOf(c));
-                        } else if (Short.class == fieldType || Short.TYPE == fieldType) {
-                            field.set(entity, Short.valueOf(c));
-                        } else if (Double.class == fieldType || Double.TYPE == fieldType) {
-                            field.set(entity, Double.valueOf(c));
-                        } else if (Character.TYPE == fieldType) {
-                            if ((c != null) && (c.length() > 0))
-                                field.set(entity, Character.valueOf(c.charAt(0)));
-                        }
+                        //匹配excel中内容和bean中的字段的类型
+                        FileTypeMatch(entity, c, field);
                         index++;
                     }
                     //相当于把每一行封装成了一个entity
@@ -195,6 +181,9 @@ public class ExcelUtil2<T> implements Serializable {
             if (list != null && list.size() >= 0) {
                 listSize = list.size();
             }
+            /**创建单元格*/
+            HSSFFont newFont = book.createFont();
+            HSSFCellStyle newCellStyle = book.createCellStyle();
             double sheetNo = Math.ceil((listSize / sheetSize));
             for (int index = 0; index <= sheetNo; ++index) {
                 //产生工作表对象
@@ -216,8 +205,7 @@ public class ExcelUtil2<T> implements Serializable {
                //设置大标题内容
                 cell.setCellValue("个人信息登记表");
                 /** ****标红列样式 被标记了的字段使用*** **/
-                HSSFFont newFont = book.createFont();
-                HSSFCellStyle newCellStyle = book.createCellStyle();
+
                 newFont.setFontName("Arail narrow");//字体
                 newFont.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
                 //第二行是标题字段
@@ -288,7 +276,7 @@ public class ExcelUtil2<T> implements Serializable {
                                 newCellStyle.setFont(newFont);
                                 cell.setCellStyle(newCellStyle);
                             } else {
-                                cell.setCellStyle(createContentStyle(book));
+                              //  cell.setCellStyle(createContentStyle(book));
                             }
                             //如果数据存在就填入 不存在就填入空格
                             Class<?> classType = field.getType();
@@ -611,5 +599,94 @@ public class ExcelUtil2<T> implements Serializable {
         font.setFontHeightInPoints((short)11);
         cellStyle.setFont(font);
         return cellStyle;
+    }
+
+    public static String getCellValue(Cell cell) {
+        String value = null;
+        CellType cellType = cell.getCellTypeEnum();
+        /** if (cellType == CellType.NUMERIC) {
+         value = String.valueOf(cell.getNumericCellValue());
+         } else*/if (cellType == CellType.BOOLEAN) {
+            value = String.valueOf(cell.getBooleanCellValue());
+        } else {
+            cell.setCellType(CellType.STRING);
+            value = cell.getStringCellValue();
+        }
+        return value;
+    }
+
+
+    private void FileTypeMatch(T entity, String c, Field field) throws IllegalAccessException {
+        // 取得类型,并根据对象类型设置值.
+        Class<?> fieldType = field.getType();
+        if (String.class == fieldType) {
+            try {
+                field.set(entity, String.valueOf(c));
+            } catch (Exception e) {
+                e.printStackTrace();
+                logger.error("excel数据转换异常，读取到的数据：" + c + "，要转换的类型：" + fieldType);
+            }
+
+        } else if ((Integer.TYPE == fieldType)
+                || (Integer.class == fieldType)) {
+            try {
+                field.set(entity, Integer.parseInt(c));
+            } catch (Exception e) {
+                e.printStackTrace();
+                logger.error("excel数据转换异常，读取到的数据：" + c + "，要转换的类型：" + fieldType);
+            }
+        } else if ((Long.TYPE == fieldType)
+                || (Long.class == fieldType)) {
+            try {
+                field.set(entity, Long.valueOf(c));
+            } catch (Exception e) {
+                e.printStackTrace();
+                logger.error("excel数据转换异常，读取到的数据：" + c + "，要转换的类型：" + fieldType);
+            }
+        } else if ((Float.TYPE == fieldType)
+                || (Float.class == fieldType)) {
+            try {
+                field.set(entity, Float.valueOf(c));
+            } catch (Exception e) {
+                e.printStackTrace();
+                logger.error("excel数据转换异常，读取到的数据：" + c + "，要转换的类型：" + fieldType);
+            }
+        } else if ((Short.TYPE == fieldType)
+                || (Short.class == fieldType)) {
+            try {
+                field.set(entity, Short.valueOf(c));
+                logger.error("excel数据转换异常，读取到的数据：" + c + "，要转换的类型：" + fieldType);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if ((Double.TYPE == fieldType)
+                || (Double.class == fieldType)) {
+            try {
+                field.set(entity, Double.valueOf(c));
+            } catch (Exception e) {
+                e.printStackTrace();
+                logger.error("excel数据转换异常，读取到的数据：" + c + "，要转换的类型：" + fieldType);
+            }
+
+        } else if (Character.TYPE == fieldType && (c != null) && (c.length() > 0)) {
+            try {
+                field.set(entity, Character.valueOf(c.charAt(0)));
+            } catch (Exception e) {
+                e.printStackTrace();
+                logger.error("excel数据转换异常，读取到的数据：" + c + "，要转换的类型：" + fieldType);
+            }
+        } else if (BigDecimal.class == fieldType) {
+            try {
+                c = c.trim();
+                BigDecimal amtBg = new BigDecimal(c);
+                // 取小数点后两位
+                amtBg = amtBg.setScale(2, BigDecimal.ROUND_HALF_UP);
+                c = amtBg.toPlainString();
+                field.set(entity, amtBg);
+            } catch (Exception e) {
+                e.printStackTrace();
+                logger.error("excel数据转换异常，读取到的数据：" + c + "，要转换的类型：" + fieldType);
+            }
+        }
     }
 }

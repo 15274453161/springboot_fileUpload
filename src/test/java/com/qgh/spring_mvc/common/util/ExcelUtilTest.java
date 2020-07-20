@@ -1,5 +1,6 @@
 package com.qgh.spring_mvc.common.util;
 
+import com.qgh.spring_mvc.common.util.excel.ExcelUtil;
 import com.qgh.spring_mvc.moduels.bean.AccountBean;
 import com.qgh.spring_mvc.moduels.service.AccountService;
 import org.junit.jupiter.api.Test;
@@ -12,8 +13,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import redis.clients.jedis.JedisPool;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -27,13 +30,13 @@ import java.util.List;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 class ExcelUtilTest {
-    @Autowired
+   /* @Autowired
     private RedisUtil redisUtil;
     @Autowired
     private JedisPool jedisPool;
     private static Logger logger = LoggerFactory.getLogger(ExcelUtilTest.class);
     @Autowired
-    AccountService accountService;
+    AccountService accountService;*/
    /* @Test
     void getExcelToList() {
         // 初始化数据
@@ -64,7 +67,7 @@ class ExcelUtilTest {
 
     }*/
 
-     @Test
+   /*  @Test
     void getExcelToList() {
         // 初始化数据
         List<AccountBean> list = accountService.getAccountInfo();
@@ -79,5 +82,33 @@ class ExcelUtilTest {
         ExcelUtil<AccountBean> util = new ExcelUtil<>(AccountBean.class);// 创建工具类.
         util.getListToExcel(list, "用户信息", out);// 导出
         logger.info("----执行完毕----------");
-    }
+    }*/
+
+ /*  @Test
+    public void testBigDecim(){
+       BigDecimal amt = BigDecimal.valueOf(000);
+      amt = amt.setScale(2,BigDecimal.ROUND_HALF_UP);
+       BigDecimal b1 = BigDecimal.ZERO;
+       b1 = b1.setScale(2,BigDecimal.ROUND_HALF_UP);
+
+       System.out.println(amt);
+       System.out.println(b1);
+
+       System.out.println(amt.equals(b1));
+       //System.out.println(BigDecimal.ZERO.equals(amt));
+
+   }*/
+
+   /* @Test
+    public void imports()
+    {
+        FileInputStream in = null;
+        try {
+            //这个的作用
+             in = new FileInputStream("d:\\imports.xls");
+             List<AccountBean>  list = new  ExcelUtil(AccountBean.class).getExcelToList("导入",in);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }*/
 }
